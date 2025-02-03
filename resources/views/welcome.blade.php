@@ -5,7 +5,7 @@
 
   <section class="section intro">
       <h1 class="section-heading gft-font">
-          Brayan Mc
+          Brayan
       </h1>
       <br>
       <p class="text-center text-large">💻 First of all thanks for visiting my personal website.</p>
