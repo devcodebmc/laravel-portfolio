@@ -78,6 +78,28 @@
       github: "https://github.com/devcodebmc/lg",
       date: "<2024> {05}"
     },
+    {
+      title: "ZELER TIENDA",
+      image: "../images/projects/zeler.jpg",
+      link: "https://www.zeler.mx/",
+      github: "javascript:void(0);",
+      date: "<2024> {06}"
+    },
+    {
+      title: "Portales SAE",
+      image: "../images/projects/cotizador.jpg",
+      link: "https://cotizador.aiko.com.mx/login.php",
+      github: "javascript:void(0);",
+      date: "<2024> {07}"
+    },
+    {
+      title: "GEA SEGUIMIENTO Y REPORTEO",
+      image: "../images/projects/gea.jpg",
+      link: "https://gea.aiko.com.mx/login.php",
+      github: "javascript:void(0);",
+      date: "<2025> {08}"
+    }
+    
   ];
 
   let currentProjectIndex = 0;
