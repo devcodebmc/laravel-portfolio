@@ -18,14 +18,14 @@
                           <span class="label">Web Developer & Community Manager</span>
                         </p>
                         <p class="tile-title">
-                          <a href="https://bisturinoticias.com/" target="_blank" rel="noopener noreferrer">Bisturí Noticias</a>: 
+                          <a href="#" target="_blank" rel="noopener noreferrer">Bisturí Noticias</a>: 
                           Website development for Bisturi News
                         </p>
                       </div>
                     </div>
                   </div>
                   <div class="tile-action">
-                    <a class="btn" href="https://bisturinoticias.com/" target="_blank" rel="noopener noreferrer">
+                    <a class="btn" href="#" target="_blank" rel="noopener noreferrer">
                       View
                     </a>
                   </div>

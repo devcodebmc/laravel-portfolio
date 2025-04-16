@@ -8,7 +8,7 @@
       <div class="share-window">
           <div class="share-bar">
               <div class="trigger">
-                <a href="https://www.instagram.com/bryan.devcode/" target="_blank" rel="noopener noreferrer">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i class='bx bxl-instagram'></i>
                 </a>
               </div>
@@ -23,17 +23,17 @@
                 </a>
               </div>
               <div class="trigger">
-                <a href="https://www.facebook.com/bryan.manzanocortes" target="_blank" rel="noopener noreferrer">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i class='bx bxl-facebook'></i>
                 </a>
               </div>
               <div class="trigger">
-                <a href="https://twitter.com/BrayanDevcode" target="_blank" rel="noopener noreferrer">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i class='bx bxl-twitter'></i>
                 </a>
               </div>
               <div class="trigger">
-                <a href=" https://wa.me/527224932750" target="_blank" rel="noopener noreferrer">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i class='bx bxl-whatsapp'></i>
                 </a>
               </div>
@@ -52,7 +52,7 @@
       @include('layouts.partials.mailField')
       <p class="copyleft">Developed with 
         <i class='bx bx-heart-circle'></i> 
-        <small class="gft-font">Brayan Manzano</small> 
+        <small class="gft-font">Bryan</small> 
          © 2024 - All rights reserved
       </p> 
   </div>

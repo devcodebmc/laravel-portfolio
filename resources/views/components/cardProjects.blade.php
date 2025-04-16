@@ -6,8 +6,8 @@
 
   <div class="article__image image"></div>
 
-  <span class="article__month">B</span>
-  <span class="article__day">MC</span>
+  <span class="article__month"><></span>
+  <span class="article__day">{}</span>
 
   <div class="article__text">
     <h3 class="article__title title">
@@ -33,8 +33,8 @@
   {
     title: "Bisturí Noticias",
     image: "https://i.pinimg.com/564x/ac/6b/ab/ac6babefc60ad455677ab24436c235c4.jpg",
-    link:  "https://bisturinoticias.com/",
-    github:"https://github.com/BrayanCorpse/Bisturi-Noticias"
+    link:  "javascript:void(0)",
+    github:"javascript:void(0)"
   },
   {
     title: "ByD Solutions",
