@@ -95,7 +95,6 @@ background-image: linear-gradient(to right bottom, #807fe2, #8178db, #8271d4, #8
   letter-spacing: 5px;
   padding: 1rem 1rem;
   text-decoration: none;
-  text-transform: uppercase;
 }
 #menu .main-nav a:first {
   padding-top: 0;
@@ -192,7 +191,7 @@ background-image: linear-gradient(to right bottom, #807fe2, #8178db, #8271d4, #8
   </header>
   
   <div id="menu" class="">
-    <nav class="main-nav">
+    <nav class="main-nav gft-font">
       <ul>
         <li>
           <a href="{{url('/')}}">
@@ -201,13 +200,13 @@ background-image: linear-gradient(to right bottom, #807fe2, #8178db, #8271d4, #8
         </li>
         <li>
           <a href="{{route('palettes')}}">
-            Resources
+            resources
           </a>
         </li>
   
         <li>
-          <a href="{{asset('assets/CV Brayan Manzano.pdf')}}" download="CV Brayan Manzano">
-            Resume
+          <a href="#" download="CV Brayan Manzano">
+            resume
           </a>
         </li>
       </ul>
@@ -222,7 +221,7 @@ background-image: linear-gradient(to right bottom, #807fe2, #8178db, #8271d4, #8
             </a>
           </li>
           <li>
-            <a href="https://github.com/BrayanCorpse" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer">
               Github
             </a>
           </li>

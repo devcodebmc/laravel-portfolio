@@ -31,7 +31,7 @@
         <a href="#" class="fill br-btn"> 
           Resume 
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="slide br-btn">
+        <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer" class="slide br-btn">
           <div>Github</div>
           <i class="icon icon-arrow-right"></i>
         </a>
