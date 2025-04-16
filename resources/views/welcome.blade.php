@@ -1,41 +1,46 @@
 @extends('layouts.main')
 
 @section('content')
-
-
-  <section class="section intro">
-      <h1 class="section-heading gft-font">
-          Bryan 
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title gft-font">
+        bryan
       </h1>
-      <br>
-      <p class="text-center text-large">💻 First of all thanks for visiting my personal website.</p>
-      <div class="bar bar-sm">
-        <div class="bar-item" role="progressbar" style="width:100%;" aria-valuemax="100"></div>
+      
+      <div class="hero-divider">
+        <div class="divider-line" aria-hidden="true"></div>
       </div>
-      <br>
-      <h2 class="text-center">📌Hey there, I'm Brayan ICT Engineer and Web Developer.</h2>
-      <br>
-      <p class="text-center text-large">
-        🤝 I enjoy sharing my knowledge and helping others when possible.
+      
+      <p class="hero-subtitle">
+        <span class="emoji">💻</span> First of all, thank you for visiting my personal website.
       </p>
-      <br>
-      <div class="">
+      
+      <div class="progress-indicator">
+        <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuemax="100"></div>
+      </div>
+      
+      <h2 class="hero-heading">
+        <span class="emoji">📌</span> Hey there, I'm Bryan — ICT Engineer and Web Developer.
+      </h2>
+      
+      <p class="hero-description">
+        <span class="emoji">🤝</span> I enjoy sharing my knowledge and helping others when possible.
+      </p>
+      
+      <div class="hero-actions">
         <a href="#" class="fill br-btn"> 
           Resume 
         </a>
         <a href="#" target="_blank" rel="noopener noreferrer" class="slide br-btn">
-            <div>Github</div>
-            <i class="icon icon-arrow-right"></i>
+          <div>Github</div>
+          <i class="icon icon-arrow-right"></i>
         </a>
-      </div> 
+      </div>
+    </div>
   </section>
 
-    @include('components.cardProjects')
-
-    @include('components.timeline')
-
-    @include('components.skills')
-
-    
+  @include('components.cardProjects')
+  @include('components.timeline')
+  @include('components.skills')
 
 @endsection
