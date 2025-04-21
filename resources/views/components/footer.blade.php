@@ -13,7 +13,7 @@
                 </a>
               </div>
               <div class="trigger">
-                <a href="https://github.com/BrayanCorpse" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer">
                   <i class='bx bxl-github'></i>
                 </a>
               </div>
@@ -29,12 +29,12 @@
               </div>
               <div class="trigger">
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i class='bx bxl-twitter'></i>
+                  <i class='bx bxl-instagram'></i>
                 </a>
               </div>
               <div class="trigger">
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i class='bx bxl-whatsapp'></i>
+                  <i class='bx bxl-behance'></i>
                 </a>
               </div>
           </div>
@@ -53,7 +53,7 @@
       <p class="copyleft">Developed with 
         <i class='bx bx-heart-circle'></i> 
         <small class="gft-font">Bryan</small> 
-         © 2024 - All rights reserved
+         © 2025 - All rights reserved
       </p> 
   </div>
   @include('layouts.partials.floatMail')

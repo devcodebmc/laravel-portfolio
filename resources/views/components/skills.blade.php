@@ -30,57 +30,57 @@
         
         <!-- Habilidades como elementos de array -->
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="html">
+          &nbsp;&nbsp;<a href="javscript:void(0);" class="skill" data-skill="html">
             <span class="string" style="--skill-color: #E44D26;">'HTML5'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="css">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="css">
             <span class="string" style="--skill-color: #2965F1;">'CSS3'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="javascript">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="javascript">
             <span class="string" style="--skill-color: #F0DB4F;">'JavaScript'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="laravel">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="laravel">
             <span class="string" style="--skill-color: #FF2D20;">'Laravel'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="mysql">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="mysql">
             <span class="string" style="--skill-color: #4479A1;">'MySQL'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="php">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="php">
             <span class="string" style="--skill-color: #777BB4;">'PHP'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="github">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="github">
             <span class="string" style="--skill-color: #181717;">'GitHub'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="bootstrap">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="bootstrap">
             <span class="string" style="--skill-color: #7952B3;">'Bootstrap'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="jquery">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="jquery">
             <span class="string" style="--skill-color: #0769AD;">'jQuery'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="uikit">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="uikit">
             <span class="string" style="--skill-color: #2396F3;">'UIkit'</span><span class="punctuation">,</span>
           </a>
         </div>
         <div class="code-line">
-          &nbsp;&nbsp;<a href="#" class="skill" data-skill="arduino">
+          &nbsp;&nbsp;<a href="javscript:void(0)" class="skill" data-skill="arduino">
             <span class="string" style="--skill-color: #00979D;">'Arduino'</span>
           </a>
         </div>
