@@ -31,10 +31,10 @@
       
       <div class="project-actions">
         <a href="#" class="minimal-btn code-btn" target="_blank" rel="noopener noreferrer">
-          <i class="icon icon-code"></i> Code
+          Github
         </a>
         <a href="#" class="minimal-btn demo-btn" target="_blank" rel="noopener noreferrer">
-          <i class="icon icon-external-link"></i> Demo
+          View project
         </a>
       </div>
     </div>
@@ -56,11 +56,12 @@
   /* Variables de diseño */
   :root {
     --primary: #2c3e50;
-    --secondary: #807fe2;
+    --secondary: #6e5bff;
     --light: #f8f9fa;
     --dark: #212529;
     --gray: #e9ecef;
-    --transition: all 0.3s ease-out;
+    --light-gray: #f1f3f5;
+    --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   /* Estilos base */
@@ -81,7 +82,7 @@
   .minimal-portfolio {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
   /* Tarjeta de proyecto */
@@ -90,9 +91,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--light-gray);
   }
 
   /* Imagen del proyecto */
@@ -110,7 +112,7 @@
   }
 
   .project-card:hover .project-image {
-    transform: scale(1.01);
+    transform: scale(1.02);
   }
 
   .project-meta {
@@ -121,12 +123,13 @@
 
   .project-date {
     font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: white;
     background: rgba(0, 0, 0, 0.4);
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
     backdrop-filter: blur(5px);
+    letter-spacing: 1px;
   }
 
   /* Contenido del proyecto */
@@ -142,6 +145,7 @@
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--primary);
+    line-height: 1.3;
   }
 
   .project-tech {
@@ -153,44 +157,59 @@
 
   .project-tech span {
     font-size: 0.85rem;
-    padding: 0.3rem 0.8rem;
-    background: var(--gray);
+    padding: 0.4rem 0.9rem;
+    background: var(--light-gray);
     border-radius: 4px;
     color: var(--primary);
+    font-weight: 500;
   }
 
-  /* Botones */
+  /* Botones mejorados */
   .project-actions {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: auto;
   }
 
   .minimal-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
     font-size: 0.95rem;
-    border-radius: 4px;
-    text-decoration: none;
+    border-radius: 6px;
+    text-decoration: none !important;
     transition: var(--transition);
+    font-weight: 500;
     border: 1px solid transparent;
   }
 
   .code-btn {
-    background: var(--dark);
-    color: white;
+    background: var(--primary);
+    color: white ;
+    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
   }
 
   .demo-btn {
     background: white;
     color: var(--secondary);
     border-color: var(--secondary);
+    box-shadow: 0 2px 10px rgba(110, 91, 255, 0.1);
   }
 
   .minimal-btn:hover {
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .code-btn:hover {
+    background: #1e2b38;
+    color: white
+  }
+
+  .demo-btn:hover {
+    background: var(--secondary);
+    color: white;
   }
 
   /* Navegación */
@@ -201,18 +220,18 @@
     align-items: center;
     gap: 1.5rem;
     padding: 1.5rem;
-    border-top: 1px solid var(--gray);
+    border-top: 1px solid var(--light-gray);
   }
 
   .nav-btn {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
-    border: 1px solid var(--gray);
+    border: 1px solid var(--light-gray);
     color: var(--dark);
     cursor: pointer;
     transition: var(--transition);
@@ -221,12 +240,14 @@
   .nav-btn:hover {
     border-color: var(--secondary);
     color: var(--secondary);
+    transform: translateY(-2px);
   }
 
   .project-counter {
+    font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
     color: var(--dark);
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   /* Responsive */
@@ -238,11 +259,15 @@
     .project-image {
       min-height: 300px;
     }
+    
+    .project-content {
+      padding: 2rem;
+    }
   }
 
-  @media (max-width: 576px) {
-    .project-content {
-      padding: 1.5rem;
+  @media (max-width: 768px) {
+    .minimal-portfolio {
+      padding: 1rem;
     }
     
     .project-actions {
@@ -251,6 +276,22 @@
     
     .minimal-btn {
       justify-content: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-title {
+      font-size: 1.7rem;
+    }
+    
+    .project-meta {
+      bottom: 1rem;
+      left: 1rem;
     }
   }
 </style>
@@ -278,7 +319,7 @@
       title: "Consorcio Gadus",
       image: "../images/projects/consorciogadus.jpg",
       link: "https://consorciogadus.com/",
-      github: "javascript:void(0);",
+      github: null,
       date: "<2022> {03}",
       tech: ["HTML", "CSS", "JavaScript"]
     },
@@ -286,7 +327,7 @@
       title: "P51",
       image: "../images/projects/p51.jpg",
       link: "https://www.p51.mx/index.html",
-      github: "javascript:void(0);",
+      github: null,
       date: "<2022> {04}",
       tech: ["HTML", "CSS", "JavaScript"]
     },
@@ -302,22 +343,25 @@
       title: "ZELER TIENDA",
       image: "../images/projects/zeler.jpg",
       link: "https://www.zeler.mx/",
-      github: "javascript:void(0);",
-      date: "<2024> {06}"
+      github: null,
+      date: "<2024> {06}",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "Wordpress", "MySQL", "Bootstrap"]
     },
     {
       title: "Portales SAE",
       image: "../images/projects/cotizador.jpg",
       link: "https://cotizador.aiko.com.mx/login.php",
-      github: "javascript:void(0);",
-      date: "<2024> {07}"
+      github: null,
+      date: "<2024> {07}",
+      tech: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "MySQL", "SQL Server", "Bootstrap"]
     },
     {
       title: "GEA SEGUIMIENTO Y REPORTEO",
       image: "../images/projects/gea.jpg",
       link: "https://gea.aiko.com.mx/login.php",
-      github: "javascript:void(0);",
-      date: "<2025> {08}"
+      github: null,
+      date: "<2025> {08}",
+      tech: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "MySQL", "Bootstrap"]
     }
   ];
 
@@ -337,10 +381,9 @@
   function showCurrentProject() {
     const project = projects[currentProjectIndex];
     
+    // Actualizar contenido básico
     projectElements.title.textContent = project.title;
     projectElements.image.style.backgroundImage = `url(${project.image})`;
-    projectElements.link.setAttribute("href", project.link);
-    projectElements.github.setAttribute("href", project.github);
     projectElements.date.textContent = project.date;
     projectElements.counter.textContent = `${currentProjectIndex + 1}/${projects.length}`;
     
@@ -348,15 +391,44 @@
     projectElements.tech.innerHTML = project.tech
       .map(tech => `<span>${tech}</span>`)
       .join('');
+    
+    // Manejar enlaces de proyecto
+    if (project.link && project.link !== "javascript:void(0);") {
+      projectElements.link.href = project.link;
+      projectElements.link.style.display = "flex";
+    } else {
+      projectElements.link.style.display = "none";
+    }
+    
+    // Manejar enlaces de GitHub
+    if (project.github && project.github !== "javascript:void(0);") {
+      projectElements.github.href = project.github;
+      projectElements.github.style.display = "flex";
+    } else {
+      projectElements.github.style.display = "none";
+    }
   }
 
   function navigateProject(direction) {
     currentProjectIndex = (currentProjectIndex + direction + projects.length) % projects.length;
-    showCurrentProject();
+    
+    // Animación suave
+    projectElements.image.style.opacity = '0';
+    setTimeout(() => {
+      showCurrentProject();
+      projectElements.image.style.opacity = '1';
+    }, 300);
   }
 
-  projectElements.prevBtn.addEventListener("click", () => navigateProject(-1));
-  projectElements.nextBtn.addEventListener("click", () => navigateProject(1));
+  projectElements.prevBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    navigateProject(-1);
+  });
+
+  projectElements.nextBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    navigateProject(1);
+  });
 
   // Navegación con teclado
   document.addEventListener('keydown', (e) => {
