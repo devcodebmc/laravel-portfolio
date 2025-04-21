@@ -28,11 +28,11 @@
       </p>
       
       <div class="hero-actions">
-        <a href="#" class="fill br-btn"> 
-          Resume 
+        <a href="#" class="fill br-btn gft-font"> 
+          resume 
         </a>
-        <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer" class="slide br-btn">
-          <div>Github</div>
+        <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer" class="slide br-btn gft-font" style="letter-spacing: 4px;">
+          <div>gIThub</div>
           <i class="icon icon-arrow-right"></i>
         </a>
       </div>
