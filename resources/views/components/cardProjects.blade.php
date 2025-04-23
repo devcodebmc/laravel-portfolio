@@ -362,6 +362,14 @@
       github: null,
       date: "<2025> {08}",
       tech: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "MySQL", "Bootstrap"]
+    },
+    {
+      title: "RECETAS CASERAS",
+      image: "../images/projects/recetascaseras.jpg",
+      link: "https://recetascaseras.bydsolutions.com/",
+      github: "https://github.com/devcodebmc/recetascaseras",
+      date: "<2025> {09}",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "Supabase", "PostgreSQL", "Tailwind"]
     }
   ];
 
