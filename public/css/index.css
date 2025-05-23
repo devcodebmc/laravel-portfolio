@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
-@import url('https://fonts.cdnfonts.com/css/razed');
-@import url('https://fonts.cdnfonts.com/css/healing-fairy-signature');
-@import url('https://fonts.cdnfonts.com/css/mercusuar');
-@import url('https://fonts.cdnfonts.com/css/kt-nirma');
+@import url('https://fonts.cdnfonts.com/css/magical-childhood');
 @import url('https://fonts.cdnfonts.com/css/encode-sans');
 
 *::before, *::after {
@@ -75,7 +71,7 @@ html:not(html:hover) .cursor::after {
 }
 
 .gft-font {
-  font-family: 'Razed', sans-serif;
+  font-family: 'Magical Childhood', sans-serif;                                             
 }
 .b-initial {
   letter-spacing: 2px;
@@ -509,10 +505,9 @@ p code {
 
 .wrapper {
   display: flex;
-  font-family: 'Razed', sans-serif;
+  font-family: 'Magical Childhood', sans-serif;  
   font-size: clamp(1rem, 1rem + 7vw, 6rem);
   font-weight: 700;
-  text-transform: uppercase;
   color: #66758c;
 }
 
@@ -604,31 +599,6 @@ p code {
   gap: 1.5rem;
   margin-top: 3rem;
   flex-wrap: wrap;
-}
-
-/* Efectos de fondo decorativos */
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -30px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(19, 17, 138, 0.1);
-  z-index: 1;
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  bottom: -30px;
-  left: -30px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: rgba(19, 17, 138, 0.1);
-  z-index: 1;
 }
 
 /* Responsive design */

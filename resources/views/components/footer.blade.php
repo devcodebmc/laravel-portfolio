@@ -1,5 +1,5 @@
-<div class=" bg-secondary" style="padding-top: 1rem;">
-    @include('layouts.partials.header', ['sectionName' => 'MY Social', 'placeContent' => 'center', 'size' => 'clamp(1rem, 1rem + 7vw, 4rem);'])
+<div class=" bg-secondary" style="padding-top: 2rem;">
+    @include('layouts.partials.header', ['sectionName' => 'My Social', 'placeContent' => 'center',  'size' => 'clamp(2rem, 3vw, 3.5rem)'])
 </div>
   
 <section class="social-section bg-gray" id="foo">

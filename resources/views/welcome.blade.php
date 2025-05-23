@@ -4,35 +4,29 @@
   <section class="hero-section">
     <div class="hero-content">
       <h1 class="hero-title gft-font">
-        bryan
+        Brayan Manzano
       </h1>
       
       <div class="hero-divider">
         <div class="divider-line" aria-hidden="true"></div>
       </div>
       
-      <p class="hero-subtitle">
-        <span class="emoji">💻</span> First of all, thank you for visiting my personal website.
+       <p class="hero-subtitle gft-font">
+        Web Developer
       </p>
-      
-      <div class="progress-indicator">
-        <div class="progress-bar" role="progressbar" style="width:100%;" aria-valuemax="100"></div>
-      </div>
-      
-      <h2 class="hero-heading">
-        <span class="emoji">📌</span> Hey there, I'm Bryan — ICT Engineer and Web Developer.
-      </h2>
       
       <p class="hero-description">
-        <span class="emoji">🤝</span> I enjoy sharing my knowledge and helping others when possible.
+        Thank you for visiting my personal website.
+        <br> 
+        I enjoy sharing knowledge and helping others.
       </p>
-      
+
       <div class="hero-actions">
-        <a href="#" class="fill br-btn gft-font"> 
-          resume 
+        <a href="#" class="fill br-btn"> 
+          Resume 
         </a>
-        <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer" class="slide br-btn gft-font" style="letter-spacing: 4px;">
-          <div>gIThub</div>
+        <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer" class="slide br-btn">
+          <div>Github</div>
           <i class="icon icon-arrow-right"></i>
         </a>
       </div>

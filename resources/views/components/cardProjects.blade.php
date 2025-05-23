@@ -7,49 +7,9 @@
   ])
 </div>
 
-<!-- Contenedor Principal -->
-<div class="minimal-portfolio">
-  <!-- Tarjeta de Proyecto -->
-  <div class="project-card">
-    <!-- Sección de Imagen -->
-    <div class="project-image-container">
-      <div class="project-image" style="background-image: url('')"></div>
-      <div class="project-meta">
-        <span class="project-date"><></span>
-      </div>
-    </div>
-
-    <!-- Sección de Contenido -->
-    <div class="project-content">
-      <h2 class="project-title">Project Name</h2>
-      
-      <div class="project-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JS</span>
-      </div>
-      
-      <div class="project-actions">
-        <a href="#" class="minimal-btn code-btn" target="_blank" rel="noopener noreferrer">
-          Github
-        </a>
-        <a href="#" class="minimal-btn demo-btn" target="_blank" rel="noopener noreferrer">
-          View project
-        </a>
-      </div>
-    </div>
-
-    <!-- Controles de Navegación -->
-    <div class="project-nav">
-      <button class="nav-btn prev-btn">
-        <i class="icon icon-arrow-left"></i>
-      </button>
-      <span class="project-counter">1/8</span>
-      <button class="nav-btn next-btn">
-        <i class="icon icon-arrow-right"></i>
-      </button>
-    </div>
-  </div>
+<!-- Bento Grid Container Full-Width -->
+<div class="fullwidth-bento-grid">
+  <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
 </div>
 
 <style>
@@ -61,7 +21,9 @@
     --dark: #212529;
     --gray: #e9ecef;
     --light-gray: #f1f3f5;
-    --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition: all 0.2s ease;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   /* Estilos base */
@@ -69,229 +31,145 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--light);
     color: var(--dark);
-    line-height: 1.6;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
   /* Encabezado */
   .minimal-header {
-    padding: 3rem 1rem 1rem;
+    padding: 2rem 1rem;
     text-align: center;
-  }
-
-  /* Contenedor principal */
-  .minimal-portfolio {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
   }
 
-  /* Tarjeta de proyecto */
-  .project-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--light-gray);
-  }
-
-  /* Imagen del proyecto */
-  .project-image-container {
-    position: relative;
-  }
-
-  .project-image {
+  /* Contenedor Bento Grid Full-Width */
+  .fullwidth-bento-grid {
     width: 100%;
-    height: 100%;
-    min-height: 400px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0;
+  }
+
+  /* Items del Bento Grid */
+  .fullwidth-bento-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    transition: var(--transition);
     background-size: cover;
     background-position: center;
-    transition: var(--transition);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
-  .project-card:hover .project-image {
+  .fullwidth-bento-item:hover {
     transform: scale(1.02);
+    z-index: 1;
+    box-shadow: var(--card-hover-shadow);
   }
 
-  .project-meta {
+  /* Overlay y contenido */
+  .fullwidth-bento-overlay {
     position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-  }
-
-  .project-date {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.85rem;
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    backdrop-filter: blur(5px);
-    letter-spacing: 1px;
-  }
-
-  /* Contenido del proyecto */
-  .project-content {
-    padding: 2.5rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    opacity: 0;
+    transition: var(--transition);
   }
 
-  .project-title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
-    line-height: 1.3;
+  .fullwidth-bento-item:hover .fullwidth-bento-overlay {
+    opacity: 1;
   }
 
-  .project-tech {
+  .fullwidth-bento-header {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
-  .project-tech span {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.9rem;
-    background: var(--light-gray);
-    border-radius: 4px;
-    color: var(--primary);
+  .fullwidth-bento-title {
+    color: white;
+    font-size: 1.1rem;
     font-weight: 500;
+    margin: 0;
+    
   }
 
-  /* Botones mejorados */
-  .project-actions {
+  .fullwidth-bento-date {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.4);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+  }
+
+  .fullwidth-bento-links {
     display: flex;
-    gap: 1rem;
-    margin-top: auto;
+    justify-content: flex-end;
+    gap: 0.8rem;
   }
 
-  .minimal-btn {
+  .fullwidth-bento-link {
+    color: white;
+    opacity: 0.8;
+    transition: var(--transition);
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.9rem 1.8rem;
-    font-size: 0.95rem;
-    border-radius: 6px;
-    text-decoration: none !important;
-    transition: var(--transition);
-    font-weight: 500;
-    border: 1px solid transparent;
-  }
-
-  .code-btn {
-    background: var(--primary);
-    color: white ;
-    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
-  }
-
-  .demo-btn {
-    background: white;
-    color: var(--secondary);
-    border-color: var(--secondary);
-    box-shadow: 0 2px 10px rgba(110, 91, 255, 0.1);
-  }
-
-  .minimal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .code-btn:hover {
-    background: #1e2b38;
-    color: white
-  }
-
-  .demo-btn:hover {
-    background: var(--secondary);
-    color: white;
-  }
-
-  /* Navegación */
-  .project-nav {
-    grid-column: span 2;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    border-top: 1px solid var(--light-gray);
-  }
-
-  .nav-btn {
-    width: 44px;
-    height: 44px;
+    width: 28px;
+    height: 28px;
+    background: rgba(0,0,0,0.5);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border: 1px solid var(--light-gray);
-    color: var(--dark);
-    cursor: pointer;
-    transition: var(--transition);
+    padding: 5px;
   }
 
-  .nav-btn:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
-    transform: translateY(-2px);
+  .fullwidth-bento-link:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    background: var(--secondary);
+    color: var(--light);
   }
 
-  .project-counter {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
-    color: var(--dark);
-    opacity: 0.8;
+  .fullwidth-bento-link svg {
+    width: 100%;
+    height: 100%;
   }
 
   /* Responsive */
-  @media (max-width: 992px) {
-    .project-card {
-      grid-template-columns: 1fr;
-    }
-    
-    .project-image {
-      min-height: 300px;
-    }
-    
-    .project-content {
-      padding: 2rem;
-    }
-  }
-
   @media (max-width: 768px) {
-    .minimal-portfolio {
-      padding: 1rem;
-    }
-    
-    .project-actions {
-      flex-direction: column;
-    }
-    
-    .minimal-btn {
-      justify-content: center;
-      width: 100%;
+    .fullwidth-bento-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
   }
 
-  @media (max-width: 576px) {
-    .project-content {
-      padding: 1.5rem;
+  @media (max-width: 480px) {
+    .fullwidth-bento-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
     
-    .project-title {
-      font-size: 1.7rem;
+    .fullwidth-bento-title {
+      font-size: 1rem;
     }
     
-    .project-meta {
-      bottom: 1rem;
-      left: 1rem;
+    .fullwidth-bento-date {
+      font-size: 0.6rem;
+    }
+    
+    .fullwidth-bento-link {
+      width: 24px;
+      height: 24px;
     }
   }
 </style>
@@ -304,147 +182,110 @@
       image: "../images/projects/bydsolutions.jpg",
       link: "https://bydsolutions.com/",
       github: "https://github.com/ByDsolutions-com/bydsolutions",
-      date: "<2020> {01}",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "Uikit"]
+      date: "<2020>"
     },
     {
       title: "Bisturí Noticias",
       image: "../images/projects/bisturinoticias.jpg",
       link: "https://bisturinoticias.online/",
       github: "https://github.com/devcodebmc/Bisturi-Noticias",
-      date: "<2021> {02}",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "Bootstrap"]
+      date: "<2021>"
     },
     {
       title: "Consorcio Gadus",
       image: "../images/projects/consorciogadus.jpg",
       link: "https://consorciogadus.com/",
       github: null,
-      date: "<2022> {03}",
-      tech: ["HTML", "CSS", "JavaScript"]
+      date: "<2022>"
     },
     {
       title: "P51",
       image: "../images/projects/p51.jpg",
       link: "https://www.p51.mx/index.html",
       github: null,
-      date: "<2022> {04}",
-      tech: ["HTML", "CSS", "JavaScript"]
+      date: "<2022>"
     },
     {
-      title: "Construcción y Remodelación Lg",
+      title: "Construcción Lg",
       image: "../images/projects/lg.jpg",
       link: "https://bydsolutions.com/demolg/public/",
       github: "https://github.com/devcodebmc/lg",
-      date: "<2024> {05}",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "Uikit"]
+      date: "<2024>"
     },
     {
       title: "ZELER TIENDA",
       image: "../images/projects/zeler.jpg",
       link: "https://www.zeler.mx/",
       github: null,
-      date: "<2024> {06}",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Wordpress", "MySQL", "Bootstrap"]
+      date: "<2024>"
     },
     {
       title: "Portales SAE",
       image: "../images/projects/cotizador.jpg",
       link: "https://cotizador.aiko.com.mx/login.php",
       github: null,
-      date: "<2024> {07}",
-      tech: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "MySQL", "SQL Server", "Bootstrap"]
+      date: "<2024>"
     },
     {
-      title: "GEA SEGUIMIENTO Y REPORTEO",
+      title: "GEA SEGUIMIENTO",
       image: "../images/projects/gea.jpg",
       link: "https://gea.aiko.com.mx/login.php",
       github: null,
-      date: "<2025> {08}",
-      tech: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "MySQL", "Bootstrap"]
+      date: "<2025>"
     },
     {
       title: "RECETAS CASERAS",
       image: "../images/projects/recetascaseras.jpg",
       link: "https://recetascaseras.bydsolutions.com/",
       github: "https://github.com/devcodebmc/recetascaseras",
-      date: "<2025> {09}",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "Supabase", "PostgreSQL", "Tailwind"]
+      date: "<2025>"
     }
   ];
 
-  let currentProjectIndex = 0;
-  const projectElements = {
-    title: document.querySelector(".project-title"),
-    image: document.querySelector(".project-image"),
-    link: document.querySelector(".demo-btn"),
-    github: document.querySelector(".code-btn"),
-    date: document.querySelector(".project-date"),
-    tech: document.querySelector(".project-tech"),
-    counter: document.querySelector(".project-counter"),
-    prevBtn: document.querySelector(".prev-btn"),
-    nextBtn: document.querySelector(".next-btn")
-  };
-
-  function showCurrentProject() {
-    const project = projects[currentProjectIndex];
+  // Renderizar Bento Grid Full-Width
+  function renderFullWidthBentoGrid() {
+    const bentoGrid = document.querySelector('.fullwidth-bento-grid');
+    bentoGrid.innerHTML = '';
     
-    // Actualizar contenido básico
-    projectElements.title.textContent = project.title;
-    projectElements.image.style.backgroundImage = `url(${project.image})`;
-    projectElements.date.textContent = project.date;
-    projectElements.counter.textContent = `${currentProjectIndex + 1}/${projects.length}`;
-    
-    // Actualizar tecnologías
-    projectElements.tech.innerHTML = project.tech
-      .map(tech => `<span>${tech}</span>`)
-      .join('');
-    
-    // Manejar enlaces de proyecto
-    if (project.link && project.link !== "javascript:void(0);") {
-      projectElements.link.href = project.link;
-      projectElements.link.style.display = "flex";
-    } else {
-      projectElements.link.style.display = "none";
-    }
-    
-    // Manejar enlaces de GitHub
-    if (project.github && project.github !== "javascript:void(0);") {
-      projectElements.github.href = project.github;
-      projectElements.github.style.display = "flex";
-    } else {
-      projectElements.github.style.display = "none";
-    }
+    projects.forEach((project) => {
+      const bentoItem = document.createElement('div');
+      bentoItem.className = 'fullwidth-bento-item';
+      bentoItem.style.backgroundImage = `url('${project.image}')`;
+      
+      // Solo mostrar enlaces si existen
+      const showDemo = project.link && project.link !== "javascript:void(0);";
+      const showGithub = project.github && project.github !== "javascript:void(0);";
+      
+      bentoItem.innerHTML = `
+        <div class="fullwidth-bento-overlay">
+          <div class="fullwidth-bento-header">
+            <h3 class="fullwidth-bento-title">${project.title}</h3>
+            <span class="fullwidth-bento-date">${project.date}</span>
+          </div>
+          <div class="fullwidth-bento-links">
+            ${showGithub ? `
+            <a href="${project.github}" target="_blank" class="fullwidth-bento-link" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017C2 16.425 4.865 20.18 8.839 21.5C9.339 21.584 9.5 21.272 9.5 21V18.5C6.5 19 5.5 17 5.5 17C4.9 15.8 4 15.5 4 15.5C3 14.8 4 14.8 4 14.8C5 14.8 5.6 15.7 5.6 15.7C6.6 17.1 7.8 16.7 9 16.5C9.1 15.9 9.4 15.5 9.7 15.2C7.7 15 5.7 14.2 5.7 10.5C5.7 9.3 6.1 8.3 6.6 7.6C6.5 7.3 6.1 6.3 6.7 4.8C6.7 4.8 7.5 4.5 9.5 6C10.3 5.8 11.2 5.7 12 5.7C12.8 5.7 13.7 5.8 14.5 6C16.5 4.5 17.3 4.8 17.3 4.8C17.9 6.3 17.5 7.3 17.4 7.6C17.9 8.3 18.3 9.3 18.3 10.5C18.3 14.2 16.3 15 14.3 15.2C14.6 15.6 14.9 16.2 14.9 17.1V21C14.9 21.3 15.1 21.6 15.6 21.5C19.1 20.2 22 16.4 22 12.017C22 6.484 17.523 2 12 2Z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            ` : ''}
+            ${showDemo ? `
+            <a href="${project.link}" target="_blank" class="fullwidth-bento-link" title="Ver Proyecto">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.213 9.787a3.391 3.391 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961"/>
+              </svg>
+            </a>
+            ` : ''}
+          </div>
+        </div>
+      `;
+      
+      bentoGrid.appendChild(bentoItem);
+    });
   }
-
-  function navigateProject(direction) {
-    currentProjectIndex = (currentProjectIndex + direction + projects.length) % projects.length;
-    
-    // Animación suave
-    projectElements.image.style.opacity = '0';
-    setTimeout(() => {
-      showCurrentProject();
-      projectElements.image.style.opacity = '1';
-    }, 300);
-  }
-
-  projectElements.prevBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    navigateProject(-1);
-  });
-
-  projectElements.nextBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    navigateProject(1);
-  });
-
-  // Navegación con teclado
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') navigateProject(-1);
-    if (e.key === 'ArrowRight') navigateProject(1);
-  });
 
   // Inicializar
-  showCurrentProject();
+  document.addEventListener('DOMContentLoaded', renderFullWidthBentoGrid);
 </script>
 @endpush
