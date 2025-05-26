@@ -11,13 +11,12 @@
         <div class="divider-line" aria-hidden="true"></div>
       </div>
       
-       <p class="hero-subtitle gft-font">
+       <h5 class="hero-subtitle gft-font">
         Web Developer
-      </p>
+      </h5>
       
       <p class="hero-description">
         Thank you for visiting my personal website.
-        <br> 
         I enjoy sharing knowledge and helping others.
       </p>
 
