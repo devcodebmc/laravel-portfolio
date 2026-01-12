@@ -25,31 +25,8 @@
 
     <!-- Grid de proyectos - Estructura fiel al CodePen -->
     <div id="project-grid" class="columns project-grid">
-      
-      <!-- Proyecto 1: ByD Solutions -->
-      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel php">
-        <div class="project__img-holder">
-          <img src="{{ asset('images/projects/bydsolutions.jpg') }}" alt="ByD Solutions" class="project__img">
-          <div class="project__overlay">
-            <div class="project__icons">
-              <a href="https://bydsolutions.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
-                <i class="icon icon-link"></i>
-              </a>
-              <a href="https://github.com/ByDsolutions-com/bydsolutions" target="_blank" class="btn btn-action circle" title="Ver repositorio">
-                <i class="icon icon-share"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project__description">
-            <h3 class="project__title">
-              <a href="https://bydsolutions.com/" target="_blank">ByD Solutions</a>
-            </h3>
-            <span class="project__category">Laravel • MySQL • Uikit</span>
-          </div>
-        </div>
-      </div>
 
-      <!-- Proyecto 2: Eventos Especiales Lerma -->
+      <!-- Proyecto : Eventos Especiales Lerma -->
       <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel php">
         <div class="project__img-holder">
           <img src="{{ asset('images/projects/eventos-especiales-lerma.jpg') }}" alt="Eventos Especiales Lerma" class="project__img">
@@ -67,32 +44,138 @@
             <h3 class="project__title">
               <a href="https://eventosespecialeslerma.com/" target="_blank">Eventos Especiales Lerma</a>
             </h3>
-            <span class="project__category">Laravel • PHP</span>
+            <span class="project__category">Laravel • PHP • Js • MySQL • Tailwind</span>
           </div>
         </div>
       </div>
 
-      <!-- Proyecto 3: Consorcio Gadus -->
+      <!-- Proyecto : CHRISTEL HOUSE  -->
       <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
         <div class="project__img-holder">
-          <img src="{{ asset('images/projects/consorciogadus.jpg') }}" alt="Consorcio Gadus" class="project__img">
+          <img src="{{ asset('images/projects/cristelhouse.jpg') }}" alt="CHRISTEL HOUSE" class="project__img">
           <div class="project__overlay">
             <div class="project__icons">
-              <a href="https://consorciogadus.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+              <a href="https://pagos-christelhouse.aiko.com.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
                 <i class="icon icon-link"></i>
               </a>
             </div>
           </div>
           <div class="project__description">
             <h3 class="project__title">
-              <a href="https://consorciogadus.com/" target="_blank">Consorcio Gadus</a>
-            </h3>
-            <span class="project__category">HTML5 • Bootstrap • PHP</span>
+                <a href="https://pagos-christelhouse.aiko.com.mx/" target="_blank">CHRISTEL HOUSE</a>
+              </h3>
+            <span class="project__category">PHP • MySQL • Js • Bootstrap</span>
           </div>
         </div>
       </div>
 
-      <!-- Proyecto 4: P51 -->
+      <!-- Proyecto : ByD Solutions -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/bydsolutions.jpg') }}" alt="ByD Solutions" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://bydsolutions.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+              <a href="https://github.com/ByDsolutions-com/bydsolutions" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://bydsolutions.com/" target="_blank">ByD Solutions</a>
+            </h3>
+            <span class="project__category">Laravel • MySQL • Uikit • Js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : TRANSPORTES SR  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php wordpress">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/transportessr.jpg') }}" alt="TRANSPORTES SR" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://factura-transportessr.aiko.com.mx/login.php" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+                <a href="https://factura-transportessr.aiko.com.mx/login.php" target="_blank">TRANSPORTES SR</a>
+              </h3>
+            <span class="project__category">PHP • MySQL • Js • Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : JULIÁ TOURS  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php wordpress">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/juliatours.jpg') }}" alt="JULIÁ TOURS" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://www.juliatours.com.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+                <a href="https://www.juliatours.com.mx/" target="_blank">JULIÁ TOURS</a>
+              </h3>
+            <span class="project__category">PHP • Wordpress • MySQL • Js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : Construcción LG -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/lg.jpg') }}" alt="Construcción LG" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://bydsolutions.com/demolg/public/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+              <a href="https://github.com/devcodebmc/lg" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://bydsolutions.com/demolg/public/" target="_blank">Construcción LG</a>
+            </h3>
+            <span class="project__category">Laravel • MySQL • Uikit • Js</span>
+          </div>
+        </div>
+      </div>
+
+            <!-- Proyecto : ZELER TIENDA -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 wordpress ecommerce">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/zeler.jpg') }}" alt="ZELER TIENDA" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://www.zeler.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://www.zeler.mx/" target="_blank">ZELER TIENDA</a>
+            </h3>
+            <span class="project__category">WordPress • WooCommerce • MySQL • PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : P51 -->
       <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
         <div class="project__img-holder">
           <img src="{{ asset('images/projects/p51.jpg') }}" alt="P51" class="project__img">
@@ -112,70 +195,47 @@
         </div>
       </div>
 
-      <!-- Proyecto 5: Construcción LG -->
-      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel">
+      <!-- Proyecto : LA COMARCA -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php wordpress">
         <div class="project__img-holder">
-          <img src="{{ asset('images/projects/lg.jpg') }}" alt="Construcción LG" class="project__img">
+          <img src="{{ asset('images/projects/lacomarca.jpg') }}" alt="LA COMARCA" class="project__img">
           <div class="project__overlay">
             <div class="project__icons">
-              <a href="https://bydsolutions.com/demolg/public/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
-                <i class="icon icon-link"></i>
-              </a>
-              <a href="https://github.com/devcodebmc/lg" target="_blank" class="btn btn-action circle" title="Ver repositorio">
-                <i class="icon icon-share"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project__description">
-            <h3 class="project__title">
-              <a href="https://bydsolutions.com/demolg/public/" target="_blank">Construcción LG</a>
-            </h3>
-            <span class="project__category">Laravel • MySQL • Uikit</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Proyecto 6: ZELER TIENDA -->
-      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 wordpress ecommerce">
-        <div class="project__img-holder">
-          <img src="{{ asset('images/projects/zeler.jpg') }}" alt="ZELER TIENDA" class="project__img">
-          <div class="project__overlay">
-            <div class="project__icons">
-              <a href="https://www.zeler.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+              <a href="https://www.lacomarcaonline.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
                 <i class="icon icon-link"></i>
               </a>
             </div>
           </div>
           <div class="project__description">
             <h3 class="project__title">
-              <a href="https://www.zeler.mx/" target="_blank">ZELER TIENDA</a>
-            </h3>
-            <span class="project__category">WordPress • WooCommerce</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Proyecto 7: Portales SAE -->
-      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
-        <div class="project__img-holder">
-          <img src="{{ asset('images/projects/cotizador.jpg') }}" alt="Portales SAE" class="project__img">
-          <div class="project__overlay">
-            <div class="project__icons">
-              <a href="https://cotizador.aiko.com.mx/login.php" target="_blank" class="btn btn-action circle" title="Ver sitio web">
-                <i class="icon icon-link"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project__description">
-            <h3 class="project__title">
-              <a href="https://cotizador.aiko.com.mx/login.php" target="_blank">Portales SAE</a>
+              <a href="https://www.lacomarcaonline.com/" target="_blank">LA COMARCA</a>
             </h3>
             <span class="project__category">PHP • jQuery • MySQL</span>
           </div>
         </div>
       </div>
 
-      <!-- Proyecto 8: GEA SEGUIMIENTO -->
+      <!-- Proyecto : ARTIPROMO  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/artipromo.jpg') }}" alt="ARTIPROMO" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://artipromo.com.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://artipromo.com.mx/" target="_blank">ARTIPROMO</a>
+            </h3>
+            <span class="project__category">PHP • js • MySQL • APIS • Web Services </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : GEA SEGUIMIENTO -->
       <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
         <div class="project__img-holder">
           <img src="{{ asset('images/projects/gea.jpg') }}" alt="GEA SEGUIMIENTO" class="project__img">
@@ -190,12 +250,52 @@
             <h3 class="project__title">
               <a href="https://gea.aiko.com.mx/login.php" target="_blank">GEA SEGUIMIENTO</a>
             </h3>
-            <span class="project__category">PHP • jQuery • MySQL</span>
+            <span class="project__category">PHP • jQuery • MySQL • Web Services</span>
           </div>
         </div>
       </div>
 
-      <!-- Proyecto 9: RECETAS CASERAS -->
+      <!-- Proyecto : Consorcio Gadus -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/consorciogadus.jpg') }}" alt="Consorcio Gadus" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://consorciogadus.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://consorciogadus.com/" target="_blank">Consorcio Gadus</a>
+            </h3>
+            <span class="project__category">HTML5 • Bootstrap • PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : Portales SAE -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/cotizador.jpg') }}" alt="Portales SAE" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://cotizador.aiko.com.mx/login.php" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://cotizador.aiko.com.mx/login.php" target="_blank">Portales SAE</a>
+            </h3>
+            <span class="project__category">PHP • jQuery • MySQL • SQl Server</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : RECETAS CASERAS -->
       <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel">
         <div class="project__img-holder">
           <img src="{{ asset('images/projects/recetascaseras.jpg') }}" alt="RECETAS CASERAS" class="project__img">
@@ -214,6 +314,46 @@
               <a href="https://recetascaseras.bydsolutions.com/" target="_blank">RECETAS CASERAS</a>
             </h3>
             <span class="project__category">Laravel • PostgreSQL • Tailwind</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : SUNRISE  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/sunrise.jpg') }}" alt="SUNRISE" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://sunriseexpendingmachine.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://sunriseexpendingmachine.com/" target="_blank">SUNRISE</a>
+            </h3>
+            <span class="project__category">PHP • js • Html • Css </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : BÍSTURI NOTICIAS -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php laravel">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/bisturinoticias.jpg') }}" alt="Bísturi Noticias" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://github.com/devcodebmc/Bisturi-Noticias" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://github.com/devcodebmc/Bisturi-Noticias" target="_blank">BÍSTURI NOTICIAS</a>
+            </h3>
+            <span class="project__category">PHP • Laravel • MySQL • Uikit • Js</span>
           </div>
         </div>
       </div>
