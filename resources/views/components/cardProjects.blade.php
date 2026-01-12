@@ -49,25 +49,25 @@
         </div>
       </div>
 
-      <!-- Proyecto 2: Bisturí Noticias -->
-      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 wordpress">
+      <!-- Proyecto 2: Eventos Especiales Lerma -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel php">
         <div class="project__img-holder">
-          <img src="{{ asset('images/projects/bisturinoticias.jpg') }}" alt="Bisturí Noticias" class="project__img">
+          <img src="{{ asset('images/projects/eventos-especiales-lerma.jpg') }}" alt="Eventos Especiales Lerma" class="project__img">
           <div class="project__overlay">
             <div class="project__icons">
-              <a href="https://bisturinoticias.online/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+              <a href="https://eventosespecialeslerma.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
                 <i class="icon icon-link"></i>
               </a>
-              <a href="https://github.com/devcodebmc/Bisturi-Noticias" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+              <a href="https://github.com/devcodebmc/eventosespeciales" target="_blank" class="btn btn-action circle" title="Ver repositorio">
                 <i class="icon icon-share"></i>
               </a>
             </div>
           </div>
           <div class="project__description">
             <h3 class="project__title">
-              <a href="https://bisturinoticias.online/" target="_blank">Bisturí Noticias</a>
+              <a href="https://eventosespecialeslerma.com/" target="_blank">Eventos Especiales Lerma</a>
             </h3>
-            <span class="project__category">WordPress • PHP</span>
+            <span class="project__category">Laravel • PHP</span>
           </div>
         </div>
       </div>
