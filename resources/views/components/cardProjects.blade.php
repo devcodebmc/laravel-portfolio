@@ -1,276 +1,615 @@
-<!-- Encabezado Minimalista -->
-<div class="portfolio-header">
-  @include('layouts.partials.header', [
-    'sectionName' => 'Portfolio',
-    'placeContent' => 'center', 
-    'size' => 'clamp(2rem, 3vw, 3.5rem)'
-  ])
-</div>
-
-<!-- Contenedor de proyectos -->
-<div class="portfolio-container">
-  <div class="portfolio-grid" id="portfolio-grid">
-    <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
+<!-- Portfolio Section - Adaptado fielmente del CodePen -->
+<section class="section-portfolio">
+  <div class="portfolio-header">
+    @include('layouts.partials.header', [
+      'sectionName' => 'Portfolio',
+      'placeContent' => 'center', 
+      'size' => 'clamp(2rem, 3vw, 3.5rem)'
+    ])
   </div>
-</div>
 
-<script>
-  const projects = [
-    {
-      title: "ByD Solutions",
-      image: "../images/projects/bydsolutions.jpg",
-      link: "https://bydsolutions.com/",
-      github: "https://github.com/ByDsolutions-com/bydsolutions",
-      date: "2020",
-      description: "Plataforma de soluciones tecnológicas para empresas con sistema de gestión integral.",
-      technologies: ["Laravel", "JavaScript", "MySQL", "Uikit"]
-    },
-    {
-      title: "Bisturí Noticias",
-      image: "../images/projects/bisturinoticias.jpg",
-      link: "https://bisturinoticias.online/",
-      github: "https://github.com/devcodebmc/Bisturi-Noticias",
-      date: "2021",
-      description: "Sitio de noticias con enfoque en salud y ciencia con sistema de suscripciones.",
-      technologies: ["WordPress", "PHP", "JavaScript", "CSS3"]
-    },
-    {
-      title: "Consorcio Gadus",
-      image: "../images/projects/consorciogadus.jpg",
-      link: "https://consorciogadus.com/",
-      github: null,
-      date: "2022",
-      description: "Sitio corporativo para empresa de construcción con portafolio de proyectos.",
-      technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "PHP"]
-    },
-    {
-      title: "P51",
-      image: "../images/projects/p51.jpg",
-      link: "https://www.p51.mx/index.html",
-      github: null,
-      date: "2022",
-      description: "Plataforma de gestión de recursos humanos con dashboard administrativo.",
-      technologies: ["HTML5", "CSS3", "JavaScript"]
-    },
-    {
-      title: "Construcción Lg",
-      image: "../images/projects/lg.jpg",
-      link: "https://bydsolutions.com/demolg/public/",
-      github: "https://github.com/devcodebmc/lg",
-      date: "2024",
-      description: "Sitio web para empresa constructora con galería de proyectos y formularios de contacto.",
-      technologies: ["PHP", "Laravel", "MySQL", "Uikit", "javaScript"]
-    },
-    {
-      title: "ZELER TIENDA",
-      image: "../images/projects/zeler.jpg",
-      link: "https://www.zeler.mx/",
-      github: null,
-      date: "2024",
-      description: "E-commerce para productos tecnológicos con carrito de compras y pasarela de pagos.",
-      technologies: ["WordPress", "WooCommerce", "JavaScript", "CSS3", "HTML5"]
-    },
-    {
-      title: "Portales SAE",
-      image: "../images/projects/cotizador.jpg",
-      link: "https://cotizador.aiko.com.mx/login.php",
-      github: null,
-      date: "2024",
-      description: "Sistema de cotización para empresa de servicios con generación de PDF.",
-      technologies: ["PHP", "JQuery", "MySQL", "SQL Server", "Bootstrap"]
-    },
-    {
-      title: "GEA SEGUIMIENTO",
-      image: "../images/projects/gea.jpg",
-      link: "https://gea.aiko.com.mx/login.php",
-      github: null,
-      date: "2025",
-      description: "Sistema de seguimiento de proyectos con calendario y asignación de tareas.",
-      technologies: ["PHP", "jQuery", "MySQL", "Bootstrap"]
-    },
-    {
-      title: "RECETAS CASERAS",
-      image: "../images/projects/recetascaseras.jpg",
-      link: "https://recetascaseras.bydsolutions.com/",
-      github: "https://github.com/devcodebmc/recetascaseras",
-      date: "2025",
-      description: "Blog de recetas con sistema de búsqueda, categorías y favoritos.",
-      technologies: ["PHP", "Laravel", "PostgreSQL", "Supabase", "Tailwind CSS", "JavaScript"]
-    }
-  ];
-
-  // Renderizar Portfolio Grid
-  function renderPortfolioGrid() {
-    const portfolioGrid = document.getElementById('portfolio-grid');
-    
-    projects.forEach((project) => {
-      const projectCard = document.createElement('div');
-      projectCard.className = 'project-card';
-      
-      const showDemo = project.link && project.link !== "javascript:void(0);";
-      const showGithub = project.github && project.github !== "javascript:void(0);";
-      
-      projectCard.innerHTML = `
-        <div class="project-image">
-          <img src="${project.image}" alt="${project.title}" loading="lazy">
+  <!-- Contenedor con Spectre -->
+  <div class="container">
+    <div class="columns">
+      <div class="column col-12 text-center">
+        <!-- Filtros de proyectos - Estilo exacto del CodePen -->
+        <div class="project-filter">
+          <a href="#" class="btn btn-sm filter active" data-filter="*">Todos</a>
+          <a href="#" class="btn btn-sm filter" data-filter=".laravel">Laravel</a>
+          <a href="#" class="btn btn-sm filter" data-filter=".wordpress">WordPress</a>
+          <a href="#" class="btn btn-sm filter" data-filter=".ecommerce">E-commerce</a>
+          <a href="#" class="btn btn-sm filter" data-filter=".php">PHP</a>
         </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3>${project.title}</h3>
-            <span class="project-date">${project.date}</span>
+      </div>
+    </div>
+
+    <!-- Grid de proyectos - Estructura fiel al CodePen -->
+    <div id="project-grid" class="columns project-grid">
+
+      <!-- Proyecto : Eventos Especiales Lerma -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/eventos-especiales-lerma.jpg') }}" alt="Eventos Especiales Lerma" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://eventosespecialeslerma.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+              <a href="https://github.com/devcodebmc/eventosespeciales" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
           </div>
-          <p class="project-description">${project.description}</p>
-          <div class="project-technologies">
-            ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
-          </div>
-          <div class="project-footer">
-            ${showGithub ? `<a href="${project.github}" target="_blank" class="btn">Github</a>` : '<span class="btn-placeholder"></span>'}
-            ${showDemo ? `<a href="${project.link}" target="_blank" class="btn">Ver proyecto</a>` : '<span class="btn-placeholder"></span>'}
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://eventosespecialeslerma.com/" target="_blank">Eventos Especiales Lerma</a>
+            </h3>
+            <span class="project__category">Laravel • PHP • Js • MySQL • Tailwind</span>
           </div>
         </div>
-      `;
-      
-      portfolioGrid.appendChild(projectCard);
-    });
-  }
+      </div>
 
-  // Inicializar
-  document.addEventListener('DOMContentLoaded', renderPortfolioGrid);
-</script>
+      <!-- Proyecto : CHRISTEL HOUSE  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/cristelhouse.jpg') }}" alt="CHRISTEL HOUSE" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://pagos-christelhouse.aiko.com.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+                <a href="https://pagos-christelhouse.aiko.com.mx/" target="_blank">CHRISTEL HOUSE</a>
+              </h3>
+            <span class="project__category">PHP • MySQL • Js • Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : ByD Solutions -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/bydsolutions.jpg') }}" alt="ByD Solutions" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://bydsolutions.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+              <a href="https://github.com/ByDsolutions-com/bydsolutions" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://bydsolutions.com/" target="_blank">ByD Solutions</a>
+            </h3>
+            <span class="project__category">Laravel • MySQL • Uikit • Js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : TRANSPORTES SR  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php wordpress">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/transportessr.jpg') }}" alt="TRANSPORTES SR" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://factura-transportessr.aiko.com.mx/login.php" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+                <a href="https://factura-transportessr.aiko.com.mx/login.php" target="_blank">TRANSPORTES SR</a>
+              </h3>
+            <span class="project__category">PHP • MySQL • Js • Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : JULIÁ TOURS  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php wordpress">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/juliatours.jpg') }}" alt="JULIÁ TOURS" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://www.juliatours.com.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+                <a href="https://www.juliatours.com.mx/" target="_blank">JULIÁ TOURS</a>
+              </h3>
+            <span class="project__category">PHP • Wordpress • MySQL • Js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : Construcción LG -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/lg.jpg') }}" alt="Construcción LG" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://bydsolutions.com/demolg/public/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+              <a href="https://github.com/devcodebmc/lg" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://bydsolutions.com/demolg/public/" target="_blank">Construcción LG</a>
+            </h3>
+            <span class="project__category">Laravel • MySQL • Uikit • Js</span>
+          </div>
+        </div>
+      </div>
+
+            <!-- Proyecto : ZELER TIENDA -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 wordpress ecommerce">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/zeler.jpg') }}" alt="ZELER TIENDA" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://www.zeler.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://www.zeler.mx/" target="_blank">ZELER TIENDA</a>
+            </h3>
+            <span class="project__category">WordPress • WooCommerce • MySQL • PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : P51 -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/p51.jpg') }}" alt="P51" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://www.p51.mx/index.html" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://www.p51.mx/index.html" target="_blank">P51</a>
+            </h3>
+            <span class="project__category">HTML5 • CSS3 • JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : LA COMARCA -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php wordpress">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/lacomarca.jpg') }}" alt="LA COMARCA" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://www.lacomarcaonline.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://www.lacomarcaonline.com/" target="_blank">LA COMARCA</a>
+            </h3>
+            <span class="project__category">PHP • jQuery • MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : ARTIPROMO  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/artipromo.jpg') }}" alt="ARTIPROMO" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://artipromo.com.mx/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://artipromo.com.mx/" target="_blank">ARTIPROMO</a>
+            </h3>
+            <span class="project__category">PHP • js • MySQL • APIS • Web Services </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : GEA SEGUIMIENTO -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/gea.jpg') }}" alt="GEA SEGUIMIENTO" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://gea.aiko.com.mx/login.php" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://gea.aiko.com.mx/login.php" target="_blank">GEA SEGUIMIENTO</a>
+            </h3>
+            <span class="project__category">PHP • jQuery • MySQL • Web Services</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : Consorcio Gadus -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/consorciogadus.jpg') }}" alt="Consorcio Gadus" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://consorciogadus.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://consorciogadus.com/" target="_blank">Consorcio Gadus</a>
+            </h3>
+            <span class="project__category">HTML5 • Bootstrap • PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : Portales SAE -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/cotizador.jpg') }}" alt="Portales SAE" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://cotizador.aiko.com.mx/login.php" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://cotizador.aiko.com.mx/login.php" target="_blank">Portales SAE</a>
+            </h3>
+            <span class="project__category">PHP • jQuery • MySQL • SQl Server</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : RECETAS CASERAS -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/recetascaseras.jpg') }}" alt="RECETAS CASERAS" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://recetascaseras.bydsolutions.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+              <a href="https://github.com/devcodebmc/recetascaseras" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://recetascaseras.bydsolutions.com/" target="_blank">RECETAS CASERAS</a>
+            </h3>
+            <span class="project__category">Laravel • PostgreSQL • Tailwind</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : SUNRISE  -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/sunrise.jpg') }}" alt="SUNRISE" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://sunriseexpendingmachine.com/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://sunriseexpendingmachine.com/" target="_blank">SUNRISE</a>
+            </h3>
+            <span class="project__category">PHP • js • Html • Css </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto : BÍSTURI NOTICIAS -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php laravel">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/bisturinoticias.jpg') }}" alt="Bísturi Noticias" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://github.com/devcodebmc/Bisturi-Noticias" target="_blank" class="btn btn-action circle" title="Ver repositorio">
+                <i class="icon icon-share"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://github.com/devcodebmc/Bisturi-Noticias" target="_blank">BÍSTURI NOTICIAS</a>
+            </h3>
+            <span class="project__category">PHP • Laravel • MySQL • Uikit • Js</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <style>
-  /* Estilos minimalistas */
-  .portfolio-header {
-    text-align: center;
-    margin: 3rem 0;
-    padding: 0 1rem;
+/* Variables personalizadas basadas en el CodePen */
+:root {
+  --portfolio-primary: #5755D9; /* Color naranja del CodePen */
+  --portfolio-primary-hover: #5f57e0;
+  --portfolio-overlay: rgba(0, 0, 0, 0.7);
+  --portfolio-text: #28465a;
+  --portfolio-text-light: #7a7a7a;
+  --portfolio-bg: #F7F9FA;
+}
+
+/* Estilos generales */
+.section-portfolio {
+  padding: 4rem 0;
+  background-color: var(--portfolio-bg);
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Filtros - Estilo exacto del CodePen */
+.project-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  cursor: default;
+}
+
+.project-filter .btn.filter {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 13px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Grid de proyectos - Adaptado para Spectre */
+.columns.project-grid {
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-bottom: 2rem;
+}
+
+.columns.project-grid .column {
+  padding: 0 4px;
+  margin-bottom: 16px;
+}
+
+/* Contenedor de proyecto */
+.project {
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.project__img-holder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.project__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Overlay con efecto hover - Exacto al CodePen */
+.project__overlay {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  background-color: var(--portfolio-overlay);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Íconos - Estilo exacto del CodePen */
+.project__icons {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: -20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.project__icons .btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  margin: 0 3px;
+  line-height: 40px;
+  text-align: center;
+  color: #333333;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+  border: none;
+}
+
+.project__icons .btn:hover {
+  color: #fff;
+  background-color: var(--portfolio-primary);
+}
+
+/* Descripción del proyecto - Estilo "cinta" del CodePen */
+.project__description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 13px 20px;
+  background-color: #fff;
+  display: block;
+  text-align: left;
+  transform: translateY(100%);
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.project__title {
+  margin-bottom: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--portfolio-text);
+}
+
+.project__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project__title:hover a {
+  color: var(--portfolio-primary);
+}
+
+.project__category {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--portfolio-text-light);
+  display: block;
+}
+
+.project__category a {
+  color: inherit;
+}
+
+.project__category:hover a {
+  color: var(--portfolio-primary);
+}
+
+/* EFECTO HOVER 2 - EXACTO AL CODEPEN */
+/* Esta es la clave: el hover mueve la descripción hacia arriba y los íconos al centro */
+.project--hover-2:hover .project__overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project--hover-2:hover .project__description {
+  transform: translateY(-100%);
+  bottom: auto;
+}
+
+.project--hover-2:hover .project__img {
+  transform: translateY(-30px);
+}
+
+.project--hover-2:hover .project__icons {
+  top: 42%;
+}
+
+/* Responsive - Adaptado del CodePen */
+@media screen and (max-width: 35.5em) {
+  .columns.project-grid .column {
+    width: 100% !important;
   }
-  
-  .portfolio-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-  }
-  
-  .project-card {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project-image {
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .project-image img {
+
+  .project-filter .btn.filter {
+    display: block;
+    margin-top: 8px;
+    margin-right: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  }
+}
+
+/* Ajustes para tamaños de pantalla medianos */
+@media (max-width: 960px) {
+  .columns.project-grid .column.col-md-6 {
+    width: 50%;
+  }
+}
+
+/* Ajustes para tamaños de pantalla pequeños */
+@media (max-width: 600px) {
+  .section-portfolio {
+    padding: 2rem 0;
   }
   
-  .project-card:hover .project-image img {
-    transform: scale(1.05);
+  .columns.project-grid .column.col-sm-12 {
+    width: 100%;
   }
-  
-  .project-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  
-  .project-header {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .project-header h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #333;
-  }
-  
-  .project-date {
-    font-size: 0.85rem;
-    color: #666;
-  }
-  
-  .project-description {
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-  }
-  
-  .project-technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .project-technologies span {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.7rem;
-    background: #f5f5f5;
-    color: #444;
-    border-radius: 20px;
-  }
-  
-  .project-footer {
-    margin-top: auto;
-    display: flex;
-    gap: 1rem;
-    padding-top: 1rem;
-  }
-  
-  .btn-placeholder {
-    visibility: hidden;
-  }
-  .btn {
-    flex: 1;
-    text-align: center;
-    transition: background 0.3s ease;
-  }
-  @media (max-width: 768px) {
-    .portfolio-grid {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .project-image {
-      height: 180px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .portfolio-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .project-footer {
-      flex-direction: column;
-    }
-  }
+}
 </style>
+
+<!-- Scripts - Mantenemos Isotope como en el CodePen -->
+@push('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+<script>
+$(document).ready(function() {
+  /* Isotope Filter - Exacto al CodePen */
+  var $portfolioFilter = $('#project-grid');
+  
+  $('.project-filter').on('click', 'a', function(e) {
+    e.preventDefault();
+    var filterValue = $(this).attr('data-filter');
+    $portfolioFilter.isotope({ filter: filterValue });
+    $('.project-filter a').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  /* Portfolio con imagesLoaded - Exacto al CodePen */
+  $portfolioFilter.imagesLoaded(function() {
+    $portfolioFilter.isotope({
+      itemSelector: '.project',
+      layoutMode: 'fitRows',
+      percentPosition: true
+    });
+  });
+});
+</script>
+@endpush
