@@ -53,7 +53,7 @@
       <p class="copyleft">Developed with 
         <i class='bx bx-heart-circle'></i> 
         <small class="gft-font">Bryan</small> 
-         © 2025 - All rights reserved
+         © {{ date('Y') }} - All rights reserved
       </p> 
   </div>
   @include('layouts.partials.floatMail')
