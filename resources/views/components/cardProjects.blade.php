@@ -69,6 +69,26 @@
         </div>
       </div>
 
+      <!-- Proyecto : Clientes SR -->
+      <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 php">
+        <div class="project__img-holder">
+          <img src="{{ asset('images/projects/clientes-sr.jpg') }}" alt="Clientes SR" class="project__img">
+          <div class="project__overlay">
+            <div class="project__icons">
+              <a href="https://factura-transportessr.aiko.com.mx/Clientes/" target="_blank" class="btn btn-action circle" title="Ver sitio web">
+                <i class="icon icon-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project__description">
+            <h3 class="project__title">
+              <a href="https://factura-transportessr.aiko.com.mx/Clientes/" target="_blank">Clientes SR</a>
+            </h3>
+            <span class="project__category">PHP • MySQL • Js • Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Proyecto : ByD Solutions -->
       <div class="column col-3 col-md-6 col-sm-12 project project--hover-2 laravel php">
         <div class="project__img-holder">
