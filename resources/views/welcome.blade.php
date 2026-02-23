@@ -21,7 +21,7 @@
       </p>
 
       <div class="hero-actions">
-        <a href="#" class="fill br-btn"> 
+        <a href="{{ asset('assets/CV-Brayan-Manzano.pdf') }}" download="CV Brayan Manzano" class="fill br-btn"> 
           Resume 
         </a>
         <a href="https://github.com/devcodebmc" target="_blank" rel="noopener noreferrer" class="slide br-btn">
