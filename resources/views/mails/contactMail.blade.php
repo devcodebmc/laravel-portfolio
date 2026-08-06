@@ -17,8 +17,8 @@
               </tr>
               <tr>
                 <td style="text-align:center;">
-                  <a href="https://brayanmanzano.dev/" title="logo" target="_blank">
-                    <img width="100" src="https://brayanmanzano.dev/images/BMC.png" title="logo" alt="logo">
+                  <a href="https://bryanmanzano.dev/" title="logo" target="_blank">
+                    <img width="100" src="https://bryanmanzano.dev/images/BMC.png" title="logo" alt="logo">
                   </a>
                 </td>
               </tr>
@@ -58,7 +58,7 @@
                 <td style="text-align:center;">
                   <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; 
                     <strong>
-                        <a href="https://brayanmanzano.dev/">www.brayanmanzano.dev</a>
+                        <a href="https://bryanmanzano.dev/">www.bryanmanzano.dev</a>
                     </strong>
                 </p>
                 </td>
