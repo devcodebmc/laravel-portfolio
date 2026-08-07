@@ -90,7 +90,7 @@
     <div class="page-container transition-transform duration-300 ease-in-out">
 
         <header class="relative h-14 bg-white">
-            <div class="absolute top-2 left-6">
+            <div class="absolute top-6 left-1/2 -translate-x-1/2 md:left-6 md:-translate-x-0">
                 <a href="{{ url('/') }}" class="opacity-70 hover:opacity-100 transition-opacity">
                     <img src="{{ asset('images/BMC.png') }}" alt="Brayan Manzano" class="h-8 w-auto">
                 </a>

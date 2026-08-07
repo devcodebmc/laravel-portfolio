@@ -49,20 +49,18 @@
                 </a>
             </div>
 
-            <div class="flex gap-10">
-               <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                    <div class="bg-white rounded-xl p-5 text-center border border-[#f0edff] shadow-sm hover:shadow-md transition-all duration-300">
-                        <p class="text-3xl font-bold text-[#807fe2]">16+</p>
-                        <p class="text-xs text-[#8a8aaa] font-mono uppercase tracking-wider mt-1">Technologies</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-5 text-center border border-[#f0edff] shadow-sm hover:shadow-md transition-all duration-300">
-                        <p class="text-3xl font-bold text-[#807fe2]">5+</p>
-                        <p class="text-xs text-[#8a8aaa] font-mono uppercase tracking-wider mt-1">Years Active</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-5 text-center border border-[#f0edff] shadow-sm hover:shadow-md transition-all duration-300">
-                        <p class="text-3xl font-bold text-[#807fe2]">10+</p>
-                        <p class="text-xs text-[#8a8aaa] font-mono uppercase tracking-wider mt-1">Projects Built</p>
-                    </div>
+            <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl p-5 text-center border border-[#f0edff] shadow-sm hover:shadow-md transition-all duration-300">
+                    <p class="text-3xl font-bold text-[#807fe2] stat-number">16+</p>
+                    <p class="text-xs text-[#8a8aaa] font-mono uppercase tracking-wider mt-1">Technologies</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 text-center border border-[#f0edff] shadow-sm hover:shadow-md transition-all duration-300">
+                    <p class="text-3xl font-bold text-[#807fe2] stat-number">5+</p>
+                    <p class="text-xs text-[#8a8aaa] font-mono uppercase tracking-wider mt-1">Years Active</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 text-center border border-[#f0edff] shadow-sm hover:shadow-md transition-all duration-300">
+                    <p class="text-3xl font-bold text-[#807fe2] stat-number">10+</p>
+                    <p class="text-xs text-[#8a8aaa] font-mono uppercase tracking-wider mt-1">Projects Built</p>
                 </div>
             </div>
         </div>
@@ -94,6 +92,41 @@
     </div>
 
 </section>
+
+@push('js')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.textContent);
+                let current = 0;
+                const duration = 2000;
+                const steps = 60;
+                const increment = target / steps;
+                const interval = duration / steps;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = Math.floor(current) + '+';
+                }, interval);
+                
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    stats.forEach(stat => observer.observe(stat));
+});
+</script>
+@endpush
 
 @include('components.cardProjects')
 @include('components.timeline')
