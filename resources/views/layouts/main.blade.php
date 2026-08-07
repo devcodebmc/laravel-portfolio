@@ -9,6 +9,16 @@
         gtag('config', 'G-RYNH0JB0MZ');
     </script>
 
+    {{-- Anti-flash: aplica el tema ANTES de pintar el body --}}
+    <script>
+        (function() {
+            const stored = localStorage.getItem('theme');
+            const isDark = stored !== 'light';
+            document.documentElement.classList.toggle('dark', isDark);
+            document.documentElement.style.setProperty('--on', isDark ? '1' : '0');
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,6 +66,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -75,7 +86,7 @@
     @stack('styles')
 </head>
 
-<body class="bg-white text-[#464646] font-['Encode_Sans',sans-serif] text-sm leading-relaxed antialiased">
+<body class="bg-[var(--bg-page)] text-[var(--text-body)] font-['Encode_Sans',sans-serif] text-sm leading-relaxed antialiased">
 
     <div class="cursor" aria-hidden="true"></div>
 
@@ -89,12 +100,18 @@
 
     <div class="page-container transition-transform duration-300 ease-in-out">
 
-        <header class="relative h-14 bg-white">
-            <div class="absolute top-6 left-1/2 -translate-x-1/2 md:left-6 md:-translate-x-0">
+        <header class="relative h-14 bg-[var(--bg-page)]">
+
+            <div class="absolute top-8 left-6 right-6 flex items-center justify-between z-10">
+
                 <a href="{{ url('/') }}" class="opacity-70 hover:opacity-100 transition-opacity">
-                    <img src="{{ asset('images/BMC.png') }}" alt="Brayan Manzano" class="h-8 w-auto">
+                    <img src="{{ asset('images/BMC.png') }}"
+                        alt="Brayan Manzano"
+                        class="h-8 w-auto dark:brightness-0 dark:invert">
                 </a>
+
             </div>
+
         </header>
 
         @include('components.toast')
@@ -108,6 +125,34 @@
 
     <script src="{{ asset('js/cursor.js') }}"></script>
     <script src="{{ asset('js/toast.js') }}" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            const clickSound = new Audio("{{ asset('assets/switch-on.mp3') }}");
+            clickSound.volume = 0.3;
+
+            btn.addEventListener('click', function () {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+
+                clickSound.currentTime = 0;
+                clickSound.play().catch(() => {});
+                
+                // Actualizar aria-pressed
+                const isDark = html.classList.contains('dark');
+                btn.setAttribute('aria-pressed', isDark);
+                btn.setAttribute('title', isDark ? 'Modo claro' : 'Modo oscuro');
+            });
+            
+            // Inicializar estado
+            const isDark = html.classList.contains('dark');
+            btn.setAttribute('aria-pressed', isDark);
+            btn.setAttribute('title', isDark ? 'Modo claro' : 'Modo oscuro');
+        });
+    </script>
+
     @stack('js')
 </body>
 </html>

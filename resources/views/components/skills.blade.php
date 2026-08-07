@@ -1,6 +1,6 @@
 {{-- components/skills.blade.php --}}
 <section id="skills" class="relative py-24 px-6 lg:px-16 overflow-hidden">
-    <div class="absolute inset-0 bg-[#f8f7ff]">
+    <div class="absolute inset-0 bg-[var(--bg-section-alt)]">
         <div class="absolute inset-0" style="background-image: radial-gradient(circle at 40% 30%, rgba(128,127,226,0.04) 0%, transparent 50%), radial-gradient(circle at 60% 70%, rgba(108,99,217,0.04) 0%, transparent 50%);"></div>
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#807fe2]/20 to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#807fe2]/20 to-transparent"></div>
@@ -13,16 +13,16 @@
                     <span class="w-2 h-2 rounded-full bg-[#807fe2] animate-pulse"></span>
                     tech stack
                 </span>
-                <span class="text-[11px] font-mono text-[#8a8aaa] tracking-wider">// tools & skills</span>
+                <span class="text-[11px] font-mono text-[var(--text-faint)] tracking-wider">// tools & skills</span>
             </div>
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08]">
-                <span class="text-[#1a1a2e]">What I</span>
+                <span class="text-[var(--text-primary)]">What I</span>
                 <span class="relative inline-block">
                     <span class="text-gradient">Work With</span>
                     <span class="absolute -bottom-2 left-0 right-0 h-2 bg-[#807fe2]/20 rounded-full blur-sm"></span>
                 </span>
             </h2>
-            <p class="text-base text-[#5a5a7a] font-light max-w-xl mx-auto mt-5 leading-relaxed">
+            <p class="text-base text-[var(--text-muted)] font-light max-w-xl mx-auto mt-5 leading-relaxed">
                 Technologies and tools I use daily to build exceptional digital experiences.
             </p>
         </div>
@@ -50,13 +50,13 @@
             @endphp
 
             @foreach($mainSkills as $skill)
-                <div class="group relative bg-white rounded-xl p-5 text-center shadow-sm hover:shadow-xl transition-all duration-400 hover:-translate-y-2 border border-[#f0edff] hover:border-[#807fe2]/25">
+                <div class="group relative bg-[var(--bg-card)] rounded-xl p-5 text-center shadow-sm hover:shadow-xl transition-all duration-400 hover:-translate-y-2 border border-[var(--border-color)] hover:border-[#807fe2]/25">
                     <div class="text-4xl md:text-5xl mb-3 transition-all duration-300 group-hover:scale-110" 
                          style="color: {{ $skill['color'] }}">
                         <i class="{{ $skill['icon'] }}"></i>
                     </div>
                     
-                    <h3 class="text-sm font-semibold text-[#1a1a2e] group-hover:text-[#807fe2] transition-colors">
+                    <h3 class="text-sm font-semibold text-[var(--text-primary)] group-hover:text-[#807fe2] transition-colors">
                         {{ $skill['name'] }}
                     </h3>
                     
@@ -70,7 +70,7 @@
         <div class="mt-20">
             <div class="text-center mb-10">
                 <div class="flex items-center justify-center gap-3">
-                    <span class="text-xs font-mono font-medium text-[#8a8aaa] uppercase tracking-wider bg-white px-5 py-2 rounded-full border border-[#e8e5f5] shadow-sm">
+                    <span class="text-xs font-mono font-medium text-[var(--text-faint)] uppercase tracking-wider bg-[var(--bg-card)] px-5 py-2 rounded-full border border-[var(--border-color)] shadow-sm">
                         Additional Tools & Technologies
                     </span>
                 </div>
@@ -90,9 +90,9 @@
                 @endphp
 
                 @foreach($additionalTools as $tool)
-                    <div class="group flex items-center gap-2.5 px-4 py-2.5 bg-white rounded-full border border-[#e8e5f5] hover:border-[#807fe2]/30 hover:bg-[#f8f7ff] hover:shadow-md transition-all duration-300 cursor-default">
+                    <div class="group flex items-center gap-2.5 px-4 py-2.5 bg-[var(--bg-card)] rounded-full border border-[var(--border-color)] hover:border-[#807fe2]/30 hover:bg-[var(--bg-section-alt)] hover:shadow-md transition-all duration-300 cursor-default">
                         <i class="{{ $tool['icon'] }} text-base" style="color: {{ $tool['color'] }}"></i>
-                        <span class="text-sm font-light text-[#5a5a7a] group-hover:text-[#807fe2] transition-colors">
+                        <span class="text-sm font-light text-[var(--text-muted)] group-hover:text-[#807fe2] transition-colors">
                             {{ $tool['name'] }}
                         </span>
                     </div>

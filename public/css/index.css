@@ -1,3 +1,43 @@
+/* ===== Variables de tema ===== */
+:root {
+    --bg-page: #fafafa;
+    --bg-section: #fafafa;
+    --bg-section-alt: #f8f7ff;
+    --bg-card: #ffffff;
+    --bg-accent: #f0edff;
+    --text-body: #464646;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-muted: #5a5a7a;
+    --text-faint: #8a8aaa;
+    --border-color: #f0edff;
+    --border-color-2: #e8e5f5;
+    --border-color-alt: #e0e0e6;
+}
+
+.dark {
+    --bg-page: #12121f;
+    --bg-section: #12121f;
+    --bg-section-alt: #14141f;
+    --bg-card: #1a1a2e;
+    --bg-accent: rgba(128, 127, 226, 0.08);
+    --text-body: #c5c5d5;
+    --text-primary: #f0f0f5;
+    --text-secondary: #cfcfe0;
+    --text-muted: #a8a8c0;
+    --text-faint: #7a7a95;
+    --border-color: #2a2a40;
+    --border-color-2: #26263a;
+    --border-color-alt: #2a2a3a;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
 /* Selección de texto */
 ::selection {
     background: #807fe2;
@@ -107,5 +147,137 @@ html {
     scroll-padding-top: 4rem;
 }
 
+/* ===== Theme toggle (foco) ===== */
+@property --on {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
 
+:root {
+    --on: 0;
+}
 
+.dark {
+    --on: 1;
+}
+
+/* Estilos minimalistas para la bombilla */
+.bulb-toggle {
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.bulb-toggle:hover {
+    transform: scale(1.05);
+}
+
+.bulb-toggle:active {
+    transform: scale(0.98);
+}
+
+.bulb-toggle__svg {
+    transition: transform 0.3s ease;
+}
+
+/* Vidrio de la bombilla - colores más cálidos */
+.bulb-glass {
+    transition: all 0.4s ease;
+    fill: #F5F0E8;
+    stroke: #D1C9BC;
+}
+
+.dark .bulb-glass {
+    fill: #E8E0D5;
+    stroke: #B8AFA3;
+    opacity: 0.9;
+}
+
+/* Brillo sutil en modo oscuro */
+.bulb-glow {
+    transition: opacity 0.4s ease;
+}
+
+.dark .bulb-glow {
+    opacity: 0.12;
+}
+
+/* Filamento minimalista */
+.filament-line {
+    transition: all 0.3s ease;
+    stroke: #A0988A;
+}
+
+.dark .filament-line {
+    stroke: #C5BDB0;
+}
+
+/* Base metálica */
+.bulb-base {
+    transition: all 0.3s ease;
+    fill: #C5BDB0;
+}
+
+.dark .bulb-base {
+    fill: #A0988A;
+}
+
+.bulb-contact {
+    transition: all 0.3s ease;
+    fill: #A0988A;
+}
+
+.dark .bulb-contact {
+    fill: #8B8378;
+}
+
+.bulb-toggle {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color-alt);
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: --on 0.45s ease, background-color 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.45s ease, transform 0.15s ease;
+    box-shadow: 0 0 calc(var(--on) * 14px) hsla(45, 90%, 65%, calc(var(--on) * 0.55));
+}
+
+.bulb-toggle:active {
+    transform: scale(0.92);
+}
+
+.bulb-toggle__svg {
+    width: 20px;
+    height: 26px;
+    overflow: visible;
+}
+
+.bulb-toggle__glass {
+    fill: hsla(45, calc(var(--on) * 70%), calc(70% + (var(--on) * 10%)), calc(0.08 + (var(--on) * 0.55)));
+    stroke: hsl(0, 0%, calc(60% - (var(--on) * 20%)));
+    stroke-width: 2;
+    transition: fill 0.45s ease, stroke 0.45s ease;
+}
+
+.bulb-toggle__filament {
+    fill: none;
+    stroke: hsl(45, calc(var(--on) * 85%), calc(25% + (var(--on) * 55%)));
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.45s ease;
+}
+
+.bulb-toggle__cap {
+    fill: hsl(0, 0%, calc(45% + (var(--on) * 25%)));
+    transition: fill 0.45s ease;
+}
+
+.bulb-toggle__cap-base {
+    fill: hsl(0, 0%, calc(35% + (var(--on) * 25%)));
+    transition: fill 0.45s ease;
+}

@@ -1,6 +1,6 @@
 <section id="projects" class="relative py-16 md:py-24 px-4 sm:px-6 lg:px-16 overflow-hidden">
     {{-- Fondo --}}
-    <div class="absolute inset-0 bg-[#f8f7ff]">
+    <div class="absolute inset-0 bg-[var(--bg-section-alt)]">
         <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 50%, rgba(128,127,226,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(108,99,217,0.04) 0%, transparent 50%);"></div>
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#807fe2]/20 to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#807fe2]/20 to-transparent"></div>
@@ -15,16 +15,16 @@
                         <span class="w-2 h-2 rounded-full bg-[#807fe2] animate-pulse"></span>
                         +10 projects
                     </span>
-                    <span class="text-[11px] font-mono text-[#8a8aaa] tracking-wider">// showcase</span>
+                    <span class="text-[11px] font-mono text-[var(--text-faint)] tracking-wider">// showcase</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08]">
-                    <span class="text-[#1a1a2e]">My</span>
+                    <span class="text-[var(--text-primary)]">My</span>
                     <span class="relative inline-block">
                         <span class="text-gradient">Work</span>
                         <span class="absolute -bottom-2 left-0 right-0 h-2 bg-[#807fe2]/20 rounded-full blur-sm"></span>
                     </span>
                 </h2>
-                <p class="text-[#5a5a7a] text-sm sm:text-base font-light max-w-xl leading-relaxed">
+                <p class="text-[var(--text-muted)] text-sm sm:text-base font-light max-w-xl leading-relaxed">
                     A selection of projects I've built for clients and personal use.
                 </p>
             </div>
@@ -32,25 +32,25 @@
             {{-- Filtros responsivos --}}
             <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 w-full lg:w-auto">
                 <div class="flex items-center gap-2">
-                    <span class="text-[10px] sm:text-xs text-[#8a8aaa] font-mono tracking-wider whitespace-nowrap">FILTER BY</span>
-                    <span class="hidden sm:block w-px h-6 bg-[#e0e0e6]"></span>
+                    <span class="text-[10px] sm:text-xs text-[var(--text-faint)] font-mono tracking-wider whitespace-nowrap">FILTER BY</span>
+                    <span class="hidden sm:block w-px h-6 bg-[var(--border-color-alt)]"></span>
                 </div>
                 
                 {{-- Filtros en scroll horizontal en móvil --}}
-                <div class="flex items-center gap-1.5 bg-white/80 backdrop-blur-sm p-1.5 rounded-full shadow-sm border border-[#e8e8f0] overflow-x-auto w-full sm:w-auto scrollbar-hide">
+                <div class="flex items-center gap-1.5 bg-[var(--bg-card)]/80 backdrop-blur-sm p-1.5 rounded-full shadow-sm border border-[var(--border-color)] overflow-x-auto w-full sm:w-auto scrollbar-hide">
                     <button data-filter="*" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 bg-[#807fe2] text-white shadow-lg shadow-[#807fe2]/20 whitespace-nowrap">
                         All
                     </button>
-                    <button data-filter=".laravel" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[#5a5a7a] hover:text-[#1a1a2e] hover:bg-[#f0edff] whitespace-nowrap">
+                    <button data-filter=".laravel" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-accent)] whitespace-nowrap">
                         Laravel
                     </button>
-                    <button data-filter=".wordpress" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[#5a5a7a] hover:text-[#1a1a2e] hover:bg-[#f0edff] whitespace-nowrap">
+                    <button data-filter=".wordpress" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-accent)] whitespace-nowrap">
                         WP
                     </button>
-                    <button data-filter=".php" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[#5a5a7a] hover:text-[#1a1a2e] hover:bg-[#f0edff] whitespace-nowrap">
+                    <button data-filter=".php" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-accent)] whitespace-nowrap">
                         PHP
                     </button>
-                    <button data-filter=".landing" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[#5a5a7a] hover:text-[#1a1a2e] hover:bg-[#f0edff] whitespace-nowrap">
+                    <button data-filter=".landing" class="filter-btn px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-accent)] whitespace-nowrap">
                         Landing
                     </button>
                 </div>
@@ -194,10 +194,10 @@
             
             @foreach($projects as $project)
                 <div class="project-item {{ implode(' ', $project['tags']) }} group">
-                    <div class="relative rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-[#f0edff] hover:border-[#807fe2]/20 h-full flex flex-col">
+                    <div class="relative rounded-xl overflow-hidden bg-[var(--bg-card)] shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-[var(--border-color)] hover:border-[#807fe2]/20 h-full flex flex-col">
                         
                         {{-- Imagen --}}
-                        <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#f0edff] to-[#e8e5f5] flex-shrink-0">
+                        <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[var(--bg-accent)] to-[var(--border-color)] flex-shrink-0">
                             <img 
                                 src="{{ asset('images/projects/' . $project['image']) }}" 
                                 alt="{{ $project['title'] }}"
@@ -212,13 +212,13 @@
                         <div class="p-3 sm:p-4 flex-1 flex flex-col">
                             {{-- Título + Iconos en la misma línea --}}
                             <div class="flex items-start justify-between gap-2">
-                                <h3 class="text-xs sm:text-sm font-semibold text-[#1a1a2e] group-hover:text-[#807fe2] transition-colors truncate flex-1">
+                                <h3 class="text-xs sm:text-sm font-semibold text-[var(--text-primary)] group-hover:text-[#807fe2] transition-colors truncate flex-1">
                                     {{ $project['title'] }}
                                 </h3>
                                 <div class="flex items-center gap-1 shrink-0">
                                     @if($project['github'])
                                         <a href="{{ $project['github'] }}" target="_blank" rel="noopener noreferrer"
-                                           class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#f0edff] flex items-center justify-center border border-[#807fe2] text-[#807fe2] hover:bg-[#807fe2] hover:text-white transition-all duration-300 hover:scale-110">
+                                           class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[var(--bg-accent)] flex items-center justify-center border border-[#807fe2] text-[#807fe2] hover:bg-[#807fe2] hover:text-white transition-all duration-300 hover:scale-110">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                                             </svg>
@@ -226,7 +226,7 @@
                                     @endif
                                     @if($project['url'])
                                         <a href="{{ $project['url'] }}" target="_blank" rel="noopener noreferrer" 
-                                           class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#f0edff] flex items-center justify-center border border-[#807fe2] text-[#807fe2] hover:bg-[#807fe2] hover:text-white transition-all duration-300 hover:scale-110">
+                                           class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[var(--bg-accent)] flex items-center justify-center border border-[#807fe2] text-[#807fe2] hover:bg-[#807fe2] hover:text-white transition-all duration-300 hover:scale-110">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                                             </svg>
@@ -235,13 +235,13 @@
                                 </div>
                             </div>
 
-                            <p class="text-[10px] sm:text-[12px] text-[#8a8aaa] font-mono truncate mt-0.5">
+                            <p class="text-[10px] sm:text-[12px] text-[var(--text-faint)] font-mono truncate mt-0.5">
                                 {{ $project['category'] }}
                             </p>
 
                             <div class="flex flex-wrap gap-1 mt-2">
                                 @foreach($project['tags'] as $tag)
-                                    <span class="text-[9px] sm:text-[10px] font-medium px-1.5 sm:px-2 py-0.5 rounded-full bg-[#f0edff] text-[#807fe2]">
+                                    <span class="text-[9px] sm:text-[10px] font-medium px-1.5 sm:px-2 py-0.5 rounded-full bg-[var(--bg-accent)] text-[#807fe2]">
                                         #{{ $tag }}
                                     </span>
                                 @endforeach
@@ -254,11 +254,11 @@
 
         {{-- CTA --}}
         <div class="mt-12 md:mt-16 text-center">
-            <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-[#e8e5f5] shadow-lg">
-                <span class="text-sm text-[#5a5a7a] font-light">
+            <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-[var(--bg-card)]/80 backdrop-blur-sm p-4 rounded-2xl border border-[var(--border-color)] shadow-lg">
+                <span class="text-sm text-[var(--text-muted)] font-light">
                     Ready to build something amazing together?
                 </span>
-                <span class="hidden sm:block w-px h-8 bg-[#e0e0e6]"></span>
+                <span class="hidden sm:block w-px h-8 bg-[var(--border-color-alt)]"></span>
                 <a href="#contact" 
                    class="inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#807fe2] to-[#6c63d9] text-white font-medium text-sm shadow-lg shadow-[#807fe2]/30 hover:shadow-[#807fe2]/50 hover:-translate-y-1 transition-all duration-300 group">
                     <span>Let's talk about your project</span>
@@ -318,9 +318,9 @@
 
                 filterBtns.forEach(b => {
                     b.classList.remove('bg-[#807fe2]', 'text-white', 'shadow-lg', 'shadow-[#807fe2]/20');
-                    b.classList.add('text-[#5a5a7a]', 'hover:text-[#1a1a2e]', 'hover:bg-[#f0edff]');
+                    b.classList.add('text-[var(--text-muted)]', 'hover:text-[var(--text-primary)]', 'hover:bg-[var(--bg-accent)]');
                 });
-                this.classList.remove('text-[#5a5a7a]', 'hover:text-[#1a1a2e]', 'hover:bg-[#f0edff]');
+                this.classList.remove('text-[var(--text-muted)]', 'hover:text-[var(--text-primary)]', 'hover:bg-[var(--bg-accent)]');
                 this.classList.add('bg-[#807fe2]', 'text-white', 'shadow-lg', 'shadow-[#807fe2]/20');
 
                 filterProjects(filter);
@@ -331,9 +331,9 @@
         if (allBtn) {
             filterBtns.forEach(b => {
                 b.classList.remove('bg-[#807fe2]', 'text-white', 'shadow-lg', 'shadow-[#807fe2]/20');
-                b.classList.add('text-[#5a5a7a]', 'hover:text-[#1a1a2e]', 'hover:bg-[#f0edff]');
+                b.classList.add('text-[var(--text-muted)]', 'hover:text-[var(--text-primary)]', 'hover:bg-[var(--bg-accent)]');
             });
-            allBtn.classList.remove('text-[#5a5a7a]', 'hover:text-[#1a1a2e]', 'hover:bg-[#f0edff]');
+            allBtn.classList.remove('text-[var(--text-muted)]', 'hover:text-[var(--text-primary)]', 'hover:bg-[var(--bg-accent)]');
             allBtn.classList.add('bg-[#807fe2]', 'text-white', 'shadow-lg', 'shadow-[#807fe2]/20');
         }
 
