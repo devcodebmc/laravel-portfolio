@@ -115,18 +115,6 @@
                                 <p class="text-sm text-[#5a5a7a] font-light leading-relaxed mb-3.5">
                                     {{ $exp['description'] }}
                                 </p>
-
-                                @if($exp['url'])
-                                    <div class="pt-3.5 border-t border-[#f0edff]">
-                                        <a href="{{ $exp['url'] }}" target="_blank" rel="noopener noreferrer" 
-                                           class="inline-flex items-center gap-1.5 text-xs font-medium text-[#807fe2] hover:text-[#6c63d9] transition-colors group/link">
-                                            <span>View project</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                @endif
                             </div>
                         </div>
                     @endforeach
